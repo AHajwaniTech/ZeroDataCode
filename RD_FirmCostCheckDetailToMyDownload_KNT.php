@@ -34,10 +34,14 @@
  * 1.0     | 2026-01-26 | KEANT Technologies  | Initial version with developer
  *         |            |                     | documentation and parameter-based
  *         |            |                     | date override functionality
+ * 1.1     |2026-05-14  | AH14042026          | Added  Validation for stop 
+ 												producing zero data files
  * ----------------------------------------------------------------------------
  */
-// require_once('PHP_XLSXWriter/xlsxwriter.class.php');
-require_once(__DIR__ . '/Report/PHP_XLSXWriter/xlsxwriter.class.php');
+//AH14042026
+// require_once('PHP_XLSXWriter/xlsxwriter.class.php'); uncomment if testing in prodcution 
+require_once(__DIR__ . '/Report/PHP_XLSXWriter/xlsxwriter.class.php'); //this path if testing in UAT
+//This is because i have placed this code in dist folder and not in reports where actual original fcost ffee script exisit
 // use XLSXWriter;
 
 function firmCostCheckDetailToMyDownload($path, $id, $reportName, $code_name, $userType, $userReportName, $outputName, $reportDescription, $mailNotification, $sftpId, $mode, $run_by, $reportBasePath, $reportDate = null)
