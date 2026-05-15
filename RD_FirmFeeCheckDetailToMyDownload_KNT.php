@@ -162,10 +162,8 @@ function firmFeeCheckDetailToMyDownload($path, $id, $reportName, $code_name, $us
 					Amount_Paid_to_Firm as 'Amount Paid To Firm' ,
 					Firm_Invoice_Date as 'Firm Invoice Date', P.FILELOCATN AS 'Firm File No',PYALORGCD
 					from FIRMCOSTFEE
-					LEFT JOIN (
-					SELECT DISTINCT RMSFILENUM, FILELOCATN
-					FROM RMSPMASTER
-					) AS P
+					LEFT JOIN ( SELECT DISTINCT RMSFILENUM, FILELOCATN
+					FROM RMSPMASTER	) AS P
 					ON FIRMCOSTFEE.RMSFILENUM = P.RMSFILENUM
 					ORDER BY  PYALORGCD,Client_Code,Firm_Invoice_Date, Firm_Invoice_No";
 				//AH==CHANGES
